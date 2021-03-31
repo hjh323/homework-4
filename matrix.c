@@ -112,7 +112,7 @@ int** create_matrix(int row, int col)
         
 
     /*check post conditions*/
-    if(matrix == NULL) {return -1;}
+    if(matrix == NULL) {return NULL;}
 
     return matrix;
 }
@@ -190,11 +190,11 @@ int subtraction_matrix(int** matrix_a, int** matrix_b, int row, int col)
 
    matrix_sub = create_matrix(row, col);
 
-    for(i = 0; i < row; i++){ /* calculate the subtraction */
+    for(i = 0; i < row; i++) /* calculate the subtraction */
         for(j = 0; j < col; j++)
             matrix_sub[i][j] = matrix_a[i][j] - matrix_b[i][j];
     
-    print_matix(matrix_sub, row, col);
+    print_matrix(matrix_sub, row, col);
     free_matrix(matrix_sub, row, col);
 
     return 1;
